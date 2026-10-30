@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulário demonstrativo de contato de Seu Nome.">
+    <title>Contato | Dev Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>dev<span class="accent">portfolio</span></span></a>
+        <nav aria-label="Navegação principal">
+          <ul class="nav-list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="curriculo.html">Currículo</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="fotos.html">Galeria</a></li>
+            <li><a href="contato.html" aria-current="page">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="conteudo" class="container page-main contact-main">
+      <header class="page-heading">
+        <p class="eyebrow">Vamos conversar / contato</p>
+        <h1>Entre em <span class="accent">contato.</span></h1>
+        <p>Use o formulário abaixo para conhecer a estrutura de um formulário acessível em HTML.</p>
+      </header>
+      <div class="contact-layout">
+        <section class="card contact-form-card">
+          <h2>Envie uma mensagem</h2>
+          <p class="muted">Os campos com <span class="accent">*</span> são obrigatórios.</p>
+          <form action="#" method="get">
+            <div class="form-field">
+              <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                autocomplete="name"
+                placeholder="Como podemos chamar você?"
+                required
+              >
+            </div>
+            <div class="form-field">
+              <label for="email">E-mail <span aria-hidden="true">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                placeholder="voce@exemplo.com"
+                required
+              >
+            </div>
+            <div class="form-field">
+              <label for="assunto">Assunto</label>
+              <input type="text" id="assunto" name="assunto" placeholder="Sobre o que gostaria de falar?">
+            </div>
+            <div class="form-field">
+              <label for="mensagem">Mensagem <span aria-hidden="true">*</span></label>
+              <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem..." required></textarea>
+            </div>
+            <button class="btn btn-primary submit-button" type="button">Enviar mensagem <span aria-hidden="true">↗</span></button>
+            <p class="form-note">Este formulário é apenas demonstrativo e não envia nem armazena dados.</p>
+          </form>
+        </section>
+        <aside class="contact-aside">
+          <div class="contact-orbit" aria-hidden="true"><span>&lt;/&gt;</span></div>
+          <div class="card">
+            <p class="eyebrow">Conexão</p>
+            <h2 class="small-heading">Obrigado pela visita.</h2>
+            <p>Este projeto acadêmico está em construção. Para saber mais sobre os temas estudados, visite o artigo do blog.</p>
+            <a class="text-link" href="blog.html">Ir para o blog <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="contact-aside-footer"><span class="status-dot"></span> Projeto pessoal em desenvolvimento</div>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>dev<span class="accent">portfolio</span></span></a>
+        <p>Feito por Crysnanth · 2026</p>
+        <nav aria-label="Links do rodapé"><a href="index.html">Início</a><a href="curriculo.html">Currículo</a><a href="#conteudo">Voltar ao topo ↑</a></nav>
+      </div>
+    </footer>
+  </body>
+</html>

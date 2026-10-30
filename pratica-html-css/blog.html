@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigo introdutório sobre Flexbox e CSS Grid.">
+    <title>Flexbox vs. CSS Grid | Dev Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>dev<span class="accent">portfolio</span></span></a>
+        <nav aria-label="Navegação principal">
+          <ul class="nav-list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="curriculo.html">Currículo</a></li>
+            <li><a href="blog.html" aria-current="page">Blog</a></li>
+            <li><a href="fotos.html">Galeria</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="conteudo" class="container page-main blog-layout">
+      <article class="article">
+        <header class="page-heading article-heading">
+          <p class="eyebrow">Caderno de estudos · CSS · 8 min de leitura</p>
+          <h1>Flexbox vs. CSS Grid: <span class="accent">quando utilizar cada um?</span></h1>
+          <p>Dois sistemas de layout poderosos, com focos diferentes. Veja como escolher o mais adequado para cada parte da interface.</p>
+          <div class="article-meta"><span>Por Crysnanth</span><span>·</span><span>Artigo introdutório</span></div>
+        </header>
+        <nav class="toc card" aria-label="Índice do artigo">
+          <p class="eyebrow">Neste artigo</p>
+          <ol>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#flexbox">O que é Flexbox?</a></li>
+            <li><a href="#grid">O que é CSS Grid?</a></li>
+            <li><a href="#comparacao">Comparação</a></li>
+            <li><a href="#exemplos">Exemplos práticos</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+          </ol>
+        </nav>
+        <section id="introducao" class="article-section">
+          <h2>Organizar elementos na página</h2>
+          <p>Em uma interface, precisamos decidir onde cada elemento aparece e como ele se comporta quando o espaço muda. CSS oferece mais de uma ferramenta para isso. Flexbox e Grid resolvem problemas parecidos, mas cada um facilita um tipo diferente de organização.</p>
+          <p>Uma forma simples de começar é pensar na direção do layout: os elementos fluem principalmente em uma direção ou precisam ser organizados em linhas e colunas ao mesmo tempo?</p>
+        </section>
+        <section id="flexbox" class="article-section">
+          <h2>O que é Flexbox?</h2>
+          <p>Flexbox (Flexible Box Layout) organiza elementos ao longo de um eixo principal. É um modelo <strong>unidimensional</strong>: podemos distribuir itens numa linha ou numa coluna, controlar o espaço entre eles e alinhar o conjunto.</p>
+          <p>O eixo transversal cruza o eixo principal. Com <code>flex-direction: row</code>, o principal é horizontal e o transversal é vertical; com <code>column</code>, as direções se invertem. Flexbox é prático para menus, grupos de botões e alinhamento de componentes.</p>
+          <pre><code>.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}</code></pre>
+        </section>
+        <section id="grid" class="article-section">
+          <h2>O que é CSS Grid?</h2>
+          <p>CSS Grid permite definir uma grade de <strong>linhas e colunas</strong> e posicionar itens nela. É um modelo <strong>bidimensional</strong>, útil quando a relação entre as duas direções importa, como numa galeria ou na estrutura de uma página.</p>
+          <p>As trilhas da grade podem ser dimensionadas de forma flexível. Por exemplo, <code>repeat(3, 1fr)</code> cria três colunas de largura igual, e <code>gap</code> define o espaço entre elas.</p>
+          <pre><code>.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}</code></pre>
+          <figure class="diagram-figure">
+            <img
+              src="imagens/flexbox-grid.svg"
+              alt="Diagrama ilustrado que compara itens em uma linha Flexbox com cartões organizados em linhas e colunas no CSS Grid"
+            >
+            <figcaption>Representação esquemática: fluxo em um eixo no Flexbox e linhas e colunas no Grid. Ilustração local criada para este projeto.</figcaption>
+          </figure>
+        </section>
+        <section id="comparacao" class="article-section">
+          <h2>Flexbox e Grid lado a lado</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Aspecto</th>
+                  <th scope="col">Flexbox</th>
+                  <th scope="col">CSS Grid</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Tipo de layout</th>
+                  <td>Unidimensional</td>
+                  <td>Bidimensional</td>
+                </tr>
+                <tr>
+                  <th scope="row">Organização</th>
+                  <td>Uma linha ou coluna por vez</td>
+                  <td>Linhas e colunas em conjunto</td>
+                </tr>
+                <tr>
+                  <th scope="row">Casos de uso</th>
+                  <td>Menu, botões, alinhamento</td>
+                  <td>Galeria, grade, layout de página</td>
+                </tr>
+                <tr>
+                  <th scope="row">Vantagem</th>
+                  <td>Distribuição e alinhamento flexíveis</td>
+                  <td>Controle preciso das áreas da grade</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="exemplos" class="article-section">
+          <h2>Quando usar cada um?</h2>
+          <ul>
+            <li><strong>Menu de navegação:</strong> Flexbox distribui os links em uma linha.</li>
+            <li><strong>Galeria de fotos:</strong> Grid cria colunas e linhas responsivas.</li>
+            <li><strong>Alinhamento de botões:</strong> Flexbox alinha e espaça os botões.</li>
+            <li><strong>Layout completo em colunas:</strong> Grid ajuda a coordenar áreas da página.</li>
+          </ul>
+          <h3>Um exemplo de marcação</h3>
+          <pre><code>&lt;section class="cartoes"&gt;
+  &lt;article&gt;Card um&lt;/article&gt;
+  &lt;article&gt;Card dois&lt;/article&gt;
+  &lt;article&gt;Card três&lt;/article&gt;
+&lt;/section&gt;</code></pre>
+          <p>Aplicando Grid à seção, os cartões formam uma grade. Dentro de cada cartão, Flexbox pode alinhar o título e um botão. Os recursos podem trabalhar juntos.</p>
+          <aside class="resource-box">
+            <h3>Continue estudando</h3>
+            <ul>
+              <li><a
+  href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout"
+  target="_blank"
+  rel="noopener noreferrer"
+>Guia de Flexbox na MDN (em inglês) ↗</a></li>
+              <li><a
+  href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout"
+  target="_blank"
+  rel="noopener noreferrer"
+>Guia de CSS Grid na MDN (em inglês) ↗</a></li>
+              <li><a
+  href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout"
+  target="_blank"
+  rel="noopener noreferrer"
+>Módulo de layouts CSS na MDN (em inglês) ↗</a></li>
+            </ul>
+            <p>O vídeo não foi incorporado porque não há uma fonte específica verificada para este projeto; os guias acima são referências consultáveis.</p>
+          </aside>
+        </section>
+        <section id="conclusao" class="article-section">
+          <h2>Conclusão</h2>
+          <p>Flexbox e CSS Grid são complementares. Use Flexbox quando o desafio principal for alinhar itens numa direção; escolha Grid quando a estrutura depender de linhas e colunas. Em projetos reais, é comum combinar os dois e testar o resultado em diferentes larguras.</p>
+          <a class="text-link" href="#conteudo">Voltar ao início do artigo ↑</a>
+        </section>
+      </article>
+      <aside class="article-aside">
+        <div class="card">
+          <p class="eyebrow">Referência rápida</p>
+          <h2 class="small-heading">Pense na direção</h2>
+          <p><strong>Uma direção?</strong><br>Experimente Flexbox.</p>
+          <p><strong>Duas dimensões?</strong><br>Experimente Grid.</p>
+          <a class="text-link" href="fotos.html">Veja Grid em ação na galeria →</a>
+        </div>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>dev<span class="accent">portfolio</span></span></a>
+        <p>Feito por Crysnanth · 2026</p>
+        <nav aria-label="Links do rodapé"><a href="curriculo.html">Currículo</a><a href="contato.html">Contato</a><a href="#conteudo">Voltar ao topo ↑</a></nav>
+      </div>
+    </footer>
+  </body>
+</html>
